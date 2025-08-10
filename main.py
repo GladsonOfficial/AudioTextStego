@@ -34,14 +34,16 @@ def apply_bandstop_with_array(pattern_arr, audio_data, sample_rate):
     # current_sample = current_time * sample_rate
 
     output_samples_arr = []
-
+    output_samples_arr.append(audio_data[:start_sample])
     for i in pattern_arr:
         current_start_time = current_time
         current_end_time = current_time + pattern_width_time
         trimmed_section = trim_audio(audio_data, sample_rate, current_start_time, current_end_time)
-        filtered_trimmed_section = apply_bandstop_in_pattern(i, audio_data, sample_rate)
+        filtered_trimmed_section = apply_bandstop_in_pattern(i, trimmed_section, sample_rate)
         output_samples_arr.append(filtered_trimmed_section)
+        current_time = current_end_time
     
+    output_samples_arr.append(audio_data[current_time * sample_rate:])
     output_samples = np.concatenate(output_samples_arr)
     
     return output_samples
