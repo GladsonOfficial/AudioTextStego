@@ -22,9 +22,9 @@ def creating_pattern_from_char(character):
     return arrarr 
 
 def apply_bandstop_with_array(pattern_arr, audio_data, sample_rate):
-    start_time = 0
+    start_time = 3
     pattern_width_time = 1
-    current_time = 0
+    current_time = start_time
 
     start_sample = start_time * sample_rate
 
