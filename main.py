@@ -6,6 +6,25 @@ import os
 OUTPUT_AUDIO_PATH = 'output/output.wav'
 OUTPUT_IMAGE_PATH = 'output/image.png'
 
+def show_banner():
+    print(r"""
+----------------------------------------------------------------------------
+|     _____            .___.__               ___________             __    | 
+|    /  _  \  __ __  __|  /|__| ____         \__    ___/___ ___  ___/  |_  | 
+|   /  /_\  \|  |  \/ __  ||  |/  _ \   ______  |   |_/ __ \\  \/  |   __\ |
+|  /   ___   \  |  / /_/  ||  (  <_> ) /_____/  |   |\  ___/ /    < |  |   | 
+|  \__/   \  /____/\____  ||__|\____/__ __      |___| \___  /__/\_ \|__|   | 
+|    ______\/______     \/   /   _____//  |_  ____   ____ \/____  \/       | 
+|   /_____/ /_____/  ______  \_____  \\   __\/ __ \ / ___\ /  _ \          | 
+|   /_____/ /_____/ /_____/  /        \|  | \  ___// /_/  >  <_> )         | 
+|                           /_______  /|__|  \___  >___  / \____/          | 
+|                                   \/           \/_____/                  | 
+|                                                                          | 
+|                                                              -Virtuosos  |
+----------------------------------------------------------------------------
+          """)
+    
+    
 def encode_handler():
     print("-- Encode --")
     print("Please enter the message to encode")
@@ -27,6 +46,7 @@ def decode_handler():
 
 
 def show_menu():
+    show_banner()
     while True:
         print("Please select:\n\t(E)ncode\n\t(D)ecode")
         option = input("> ")
@@ -42,6 +62,5 @@ def show_menu():
 
 
 if __name__ == "__main__":
-    # encoding.encode_and_write("AA", "temp_resources/Mera Bharat.wav", "temp_resources/output.wav")
     show_menu()
     
