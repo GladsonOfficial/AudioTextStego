@@ -5,9 +5,9 @@
             "label": "My Task",
             "command": "${command:python.interpreterPath}",
             "type": "shell",
-            "args": ["main.py"],
+            "args": ["${file}"],
             "presentation": {
-                "reveal": "always", "focus": false
+                "reveal": "always", "focus": true
             },
             "group": {"isDefault": true, "kind": "build"}
         }

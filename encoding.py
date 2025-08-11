@@ -110,6 +110,7 @@ def encode_and_write(message, input_filename, output_filename):
     pattern_array = creating_pattern_from_sentence(message)
     encoded_audio_data = apply_bandstop_with_array(pattern_array, wave_file_data, sample_rate)
 
+    print("Processed, writing to file...")
     wavfile.write(output_filename, sample_rate, encoded_audio_data)
 
 
